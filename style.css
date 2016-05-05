@@ -1,9 +1,11 @@
 body{
+  background-color: #57AD68;
+  font-family: Verdana;
 
 }
 #alien{
   height:40px;
   width:auto;
-  padding-left: 500px;
+  padding-left: 480px;
   padding-top: 8px;
 }
