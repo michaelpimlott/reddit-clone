@@ -9,3 +9,8 @@ body{
   padding-left: 480px;
   padding-top: 8px;
 }
+
+#logotext{
+  color:#FC662F;
+  font-size: 24px;
+}
