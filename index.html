@@ -14,11 +14,24 @@
   <body ng-controller="funTimeController">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <a class="navbar-brand" href="">Crappy Off Brand Reddit</a>
+        <img id="alien" alt="Brand" src="https://f.thumbs.redditmedia.com/PKtPxTg7rV0MX-qk.png">
+        <a class="navbar-brand" href="">Crappy Off-Brand Reddit</a>
         <ul class="nav navbar-nav">
-          <li><a href="" ng-click="" ><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
+          <li><a href="" ng-click=""><span class="glyphicon glyphicon-plus"></span> New Post</a></li>
+          <li class="navbar-form">
+            <div class="form-inline">
+              <input type="text" placeholder="search" class="form-control" ng-model="">
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Sort by</span>
+            <ul class="dropdown-menu">
+              <li ng-repeat=""><a href="#" ng-click="">Sort by</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-
+    </nav>
 
     <script type='text/javascript' src='app.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

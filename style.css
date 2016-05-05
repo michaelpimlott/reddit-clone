@@ -1,3 +1,9 @@
 body{
 
 }
+#alien{
+  height:40px;
+  width:auto;
+  padding-left: 500px;
+  padding-top: 8px;
+}
