@@ -66,4 +66,18 @@ angular.module('redditClone', [])
     $scope.newPost = {};
 
   };
+
+  $scope.voteChange = function(post, valueUpdate) {
+    post.votes += valueUpdate;
+  };
+
+  $scope.changeColorClass = function(post) {
+    if (post.votes > 0) {
+      return "positive";
+    } else if (post.votes < 0) {
+      return "negative";
+    } else {
+      return "";
+    }
+  };
 });
