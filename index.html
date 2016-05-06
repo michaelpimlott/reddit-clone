@@ -70,7 +70,7 @@
         <p>
           <span>
           <span class="glyphicon glyphicon-time"></span> |
-          <span class="glyphicon glyphicon-comment"></span> |
+          <span class="glyphicon glyphicon-comment"></span> |<span><ng-pluralize count="post.comments.length" when="{0: ' 0 comments  ', 1: ' 1 comment ', 'other': '{post.comments.length} comments'}"></span>
           <span id="pencil" class="glyphicon glyphicon-pencil"></span>
           <span id="addcomment">Add Comment</span>
           </span>
