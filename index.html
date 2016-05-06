@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Forms</title>
+    <title>broke-ass reddit</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -33,10 +33,10 @@
       </div>
     </nav>
     <div class="container">
-    <form name="postForm" ng-submit="" ng-show="" class="newForm">
-      <div class="form-group" ng-class="">
-        <label for="title" ng-class="">Title</label>
-        <input type="text" class="form-control" name="title" placeholder="Title" ng-model="" required>
+    <form name="postForm" ng-submit="addPost(newPost)" ng-show="view.newPostSee" class="newForm">
+      <div class="form-group" ng-class="{'has-error': checkForError(postForm.title), 'has-success':postForm.title.$valid}">
+        <label for="title" ng-class="{'text-danger': checkForError(postForm.title), 'text-success':postForm.title.$valid}">Title</label>
+        <input type="text" class="form-control" name="title" placeholder="Title" ng-model="newPost.title" required>
     </div>
     <div class="form-group" ng-class="">
       <label for="author" ng-class="">Author</label>
@@ -56,16 +56,17 @@
     <div class="row">
       <div class="col-md-2"><img id="postimg" ng-src="{{ post.imglink }}" ></div>
       <div class="col-md-10">
-        <h4>
+        <h4 id="title">
           {{ post.title }}
         </h4>
-        <p> By {{ post.author }}</p>
+        <p id="postauthor"> By {{ post.author }}</p>
         <p> {{ post.description }} </p>
         <p>
           <span>
+          <span class="glyphicon glyphicon-time"></span> |
           <span class="glyphicon glyphicon-comment"></span> |
-          <span class="glyphicon glyphicon-pencil"></span>
-          Add Comment
+          <span id="pencil" class="glyphicon glyphicon-pencil"></span>
+          <span id="addcomment">Add Comment</span>
           </span>
         </p>
   </div>

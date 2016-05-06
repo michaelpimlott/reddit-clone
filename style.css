@@ -18,4 +18,24 @@ body{
 #postimg {
 height:140px;
 width:auto;
+border-radius:10px;
+}
+
+#postauthor {
+margin-right:40px;
+text-align: right;
+font-size: 16px;
+}
+
+#addcomment {
+color:#57AD68;
+}
+
+#pencil{
+color:#57AD68;
+}
+
+#title{
+font-size: 24px;
+
 }
