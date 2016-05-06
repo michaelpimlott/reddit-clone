@@ -52,6 +52,23 @@
     </div>
     <input type="submit" class="btn btn-primary" value="Add Post">
   </form>
+  <div class="well" ng-repeat="post in view.posts">
+    <div class="row">
+      <div class="col-md-2"><img id="postimg" ng-src="{{ post.imglink }}" ></div>
+      <div class="col-md-10">
+        <h4>
+          {{ post.title }}
+        </h4>
+        <p> By {{ post.author }}</p>
+        <p> {{ post.description }} </p>
+        <p>
+          <span>
+          <span class="glyphicon glyphicon-comment"></span> |
+          <span class="glyphicon glyphicon-pencil"></span>
+          Add Comment
+          </span>
+        </p>
+  </div>
     <script type='text/javascript' src='app.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
