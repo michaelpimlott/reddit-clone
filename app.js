@@ -3,6 +3,11 @@ angular.module('redditClone', [])
   $scope.newPost = {};
   $scope.newComment = {};
   $scope.view = {};
+  $scope.view.newPostSee = false;
+  $scope.view.sortOptions = ['date', 'votes', 'title'];
+  $scope.view.defaultSort = $scope.view.sortOptions[0];
+  $scope.view.valueOf = "-votes";
+  $scope.view.search = "";
   $scope.view.posts = [
     {
       title: "We are the worst",
@@ -29,6 +34,15 @@ angular.module('redditClone', [])
       comments: []
     }
   ];
+
+  $scope.setSortOrder = function(newValueOf) {
+    $scope.view.defaultSort = newValueOf;
+    $scope.view.valueOf = newValueOf === "title" ? newValueOf : '-' + newValueOf;
+  };
+
+  $scope.toggleNewPostSee = function() {
+      post.view.newPostSee = !post.view.newPostSee;
+  };
 
   $scope.checkForError = function(field) {
     return field.$invalid;

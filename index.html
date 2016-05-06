@@ -17,16 +17,16 @@
         <img id="alien" alt="Brand" src="https://f.thumbs.redditmedia.com/PKtPxTg7rV0MX-qk.png">
         <a class="navbar-brand" href="">Crappy Off-Brand <span id="logotext">reddit</span></a>
         <ul class="nav navbar-nav">
-          <li><a href="" ng-click=""><span class="glyphicon glyphicon-plus"></span> New Post</a></li>
+          <li><a href="javascript:void(0)" ng-click="toggleNewPostSee()"><span class="glyphicon glyphicon-plus"></span> New Post</a></li>
           <li class="navbar-form">
             <div class="form-inline">
-              <input type="text" placeholder="search" class="form-control" ng-model="">
+              <input type="text" placeholder="search" class="form-control" ng-model="view.search">
             </div>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Sort by</span>
             <ul class="dropdown-menu">
-              <li ng-repeat=""><a href="#" ng-click="">Sort by</a></li>
+              <li ng-repeat="option in view.sortOptions"><a href="#" ng-click="setSortOrder(option)">Sort by {{option}}</a></li>
             </ul>
           </li>
         </ul>
@@ -70,7 +70,7 @@
         <p>
           <span>
           <span class="glyphicon glyphicon-time"></span> |
-          <span class="glyphicon glyphicon-comment"></span> |<span><ng-pluralize count="post.comments.length" when="{0: ' 0 comments  ', 1: ' 1 comment ', 'other': '{post.comments.length} comments'}"></span>
+          <span class="glyphicon glyphicon-comment"></span> |<span><ng-pluralize count="post.comments.length" when="{0: ' 0 comments  ', 1: ' 1 comment ', 'other': '{post.comments.length} comments'}"></span> |
           <span id="pencil" class="glyphicon glyphicon-pencil"></span>
           <span id="addcomment">Add Comment</span>
           </span>
