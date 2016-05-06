@@ -61,9 +61,9 @@
       <div class="col-md-2"><img id="postimg" ng-src="{{ post.imglink }}" ></div>
       <div class="col-md-10">
         <h4 id="title">
-          {{ post.title }} | <span class="glyphicon glyphicon-arrow-up" ng-click=""></span>
-          <span class= "glyphicon glyphicon-arrow-down" ng-click=""></span>
-          <span> {{post.votes}} </span>
+          {{ post.title }} | <span class="glyphicon glyphicon-arrow-up" ng-click="voteChange(post, 1)"></span>
+          <span class= "glyphicon glyphicon-arrow-down" ng-click="voteChange(post, -1)"></span>
+          <span ng-class="changeColorClass(post)"> {{post.votes}} </span>
         </h4>
         <p id="postauthor"> By {{ post.author }}</p>
         <p> {{ post.description }} </p>
