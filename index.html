@@ -15,7 +15,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <img id="alien" alt="Brand" src="https://f.thumbs.redditmedia.com/PKtPxTg7rV0MX-qk.png">
-        <a class="navbar-brand" href="">Crappy Off-Brand <span id="logotext">reddit</span></a>
+        <a class="navbar-brand" href="javascript:void(0)">Crappy Off-Brand <span id="logotext">reddit</span></a>
         <ul class="nav navbar-nav">
           <li><a href="javascript:void(0)" ng-click="toggleNewPostSee()"><span class="glyphicon glyphicon-plus"></span> New Post</a></li>
           <li class="navbar-form">
@@ -24,9 +24,9 @@
             </div>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Sort by</span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Sort by {{ view.defaultSort }}</span>
             <ul class="dropdown-menu">
-              <li ng-repeat="option in view.sortOptions"><a href="#" ng-click="setSortOrder(option)">Sort by {{option}}</a></li>
+              <li ng-repeat="option in view.sortOptions"><a href="#" ng-click="setSortOrder(option)">Sort by {{ option }}</a></li>
             </ul>
           </li>
         </ul>
@@ -56,7 +56,7 @@
     </div>
     <input type="submit" class="btn btn-primary" value="Add Post">
   </form>
-  <div class="well" ng-repeat="post in view.posts">
+  <div class="well" ng-repeat="post in view.posts | orderBy: view.valueOf | filter: view.search">
     <div class="row">
       <div class="col-md-2"><img id="postimg" ng-src="{{ post.imglink }}" ></div>
       <div class="col-md-10">
